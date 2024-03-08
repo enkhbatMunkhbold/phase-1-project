@@ -9,9 +9,18 @@ body {
 }
 
 header {
+  margin: 25px;
   padding: 0.5rem;
-  width: 100%;
-  color:white;
+  width: 100%;  
   font-size: 40px;
   font-weight: bolder;
+}
+
+h3, h4 {
+  margin: 0;
+  color:white;
+}
+
+.build-car .car-list {
+  border: 1px solid white;
 }

@@ -1,0 +1,54 @@
+{
+  "used_cars": [
+    {
+      "id": 1,
+      "model": "Camry",
+      "image": "./images/camry_silver.jpeg",
+      "year": 2018,
+      "mileage": 45000,
+      "color": "Silver",
+      "transmission": "Automatic",
+      "price": 18000
+    },
+    {
+      "id": 2,
+      "model": "Corolla",
+      "image": "./images/corolla_blue.jpeg",
+      "year": 2017,
+      "mileage": 55000,
+      "color": "Blue",
+      "transmission": "Manual",
+      "price": 16000
+    },
+    {
+      "id": 3,
+      "model": "RAV4",
+      "image": "./images/rav4_black.jpeg",
+      "year": 2019,
+      "mileage": 35000,
+      "color": "Black",
+      "transmission": "Automatic",
+      "price": 22000
+    },
+    {
+      "id": 4,
+      "model": "Highlander",
+      "image": "./images/highlander_red.jpeg",
+      "year": 2016,
+      "mileage": 60000,
+      "color": "Red",
+      "transmission": "Automatic",
+      "price": 25000
+    },
+    {
+      "id": 5,
+      "model": "Prius",
+      "image": "./images/prius_green.jpeg",
+      "year": 2015,
+      "mileage": 70000,
+      "color": "Green",
+      "transmission": "Hybrid",
+      "price": 15000
+    }
+  ]
+}
