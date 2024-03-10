@@ -2,7 +2,7 @@
   "used_cars": [
     {
       "id": 1,
-      "model": "Camry",
+      "model": "CAMRY",
       "image": "./images/camry_silver.jpeg",
       "year": 2018,
       "mileage": 45000,
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "model": "Corolla",
+      "model": "COROLLA",
       "image": "./images/corolla_blue.jpeg",
       "year": 2017,
       "mileage": 55000,
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "model": "Highlander",
+      "model": "HIGHLANDER",
       "image": "./images/highlander_red.jpeg",
       "year": 2016,
       "mileage": 60000,
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "model": "Prius",
+      "model": "PRIUS",
       "image": "./images/prius_green.jpeg",
       "year": 2015,
       "mileage": 70000,

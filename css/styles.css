@@ -10,7 +10,7 @@ body {
 
 ul {
   margin: auto;
-  padding-left: 16px;
+  padding-left: 10px;
 }
 
 .container {
@@ -34,17 +34,33 @@ h3, h4 {
   color:white;
 }
 
-.build-car .car-list {
+.sell-own-car  {
   border: 1px solid white;
+  text-align: left;
 }
 
 .car-poster {
-  width: 10rem;
-  border: 3px solid white;
-  box-shadow: 4px 2px 2px gray;
+  width: 12rem;
 }
 
 .card-title {
   color: azure;
   font-weight: bolder;
+}
+
+.car-image {
+  margin-bottom: 5px;
+}
+
+h4 {
+  margin: 10px;
+}
+
+label {
+  color: white;
+}
+
+.car-details, .car-list{
+  border: 1px solid white;
+  padding: 0 5px;
 }

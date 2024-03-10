@@ -18,7 +18,7 @@ const renderEachCar = car => {
   const div = document.createElement('div')
   div.className = 'card text-bg-info border-secondary mb-3 car-poster'
   div.innerHTML = `
-    <img src="${car.image}" class="card-img-top" style="height:100px;" alt="...">
+    <img src="${car.image}" class="card-img-top car-image" style="height:100px;" alt="...">
     <div class="card-body">
       <h5 class="card-title">${car.model}</h5>
     </div>
