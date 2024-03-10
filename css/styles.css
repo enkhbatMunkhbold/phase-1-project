@@ -8,12 +8,25 @@ body {
   background-color: blue;
 }
 
+ul {
+  margin: auto;
+  padding-left: 16px;
+}
+
+.container {
+  margin: 0;
+  width: 100%;
+}
+
 header {
   margin: 25px;
   padding: 0.5rem;
   width: 100%;  
   font-size: 40px;
   font-weight: bolder;
+  background-color: cadetblue;
+  border: 1px solid white;
+  box-shadow: 10px 5px 5px gray;
 }
 
 h3, h4 {
@@ -23,4 +36,15 @@ h3, h4 {
 
 .build-car .car-list {
   border: 1px solid white;
+}
+
+.car-poster {
+  width: 10rem;
+  border: 3px solid white;
+  box-shadow: 4px 2px 2px gray;
+}
+
+.card-title {
+  color: azure;
+  font-weight: bolder;
 }

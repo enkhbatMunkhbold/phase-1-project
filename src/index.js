@@ -16,17 +16,11 @@ const getAllUsedCars = () => {
 
 const renderEachCar = car => {
   const div = document.createElement('div')
-  div.className = 'card text-bg-info border-secondary mb-3'
-  div.style = "width: 25rem;"
+  div.className = 'card text-bg-info border-secondary mb-3 car-poster'
   div.innerHTML = `
-    <img src="${car.image}" class="card-img-top" alt="...">
+    <img src="${car.image}" class="card-img-top" style="height:100px;" alt="...">
     <div class="card-body">
-    <h3 class="card-title">${car.model}</h3>
-        <h5>Year: ${car.year}</h5>
-        <h5>Mileage: ${car.mileage}</h5>
-        <h5>Color: ${car.color}</h5>
-        <h5>Transmission: ${car.transmission}</h5>
-        <h5>Price: $${car.price}</h5>
+      <h5 class="card-title">${car.model}</h5>
     </div>
   `
   console.log('Div:', div)
