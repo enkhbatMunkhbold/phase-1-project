@@ -11,6 +11,8 @@ body {
 ul {
   margin: auto;
   padding-left: 10px;
+  display: flex;  
+  flex-wrap: wrap;
 }
 
 .container {
@@ -63,4 +65,22 @@ label {
 .car-details, .car-list{
   border: 1px solid white;
   padding: 0 5px;
+}
+
+.detail-image {
+  margin-top: 2rem;
+  height: 60%;
+  width: 80%;
+}
+
+.details {
+  text-align: left;
+  margin: 2rem;
+  padding-left: 5rem;
+  color: white;
+  font-weight: bolder;
+}
+
+.card-body {
+  padding: 0;
 }

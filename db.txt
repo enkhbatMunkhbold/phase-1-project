@@ -21,6 +21,26 @@
       "price": 16000
     },
     {
+      "id": "3",
+      "model": "RAV4",
+      "image": "./images/rav4_black.jpeg",
+      "year": 2019,
+      "mileage": 35000,
+      "color": "Black",
+      "transmission": "Automatic",
+      "price": 22000
+    },
+    {
+      "id": "4",
+      "model": "HIGHLANDER",
+      "image": "./images/highlander_red.jpeg",
+      "year": 2016,
+      "mileage": 60000,
+      "color": "Red",
+      "transmission": "Automatic",
+      "price": 25000
+    },
+    {
       "id": "5",
       "model": "PRIUS",
       "image": "./images/prius_green.jpeg",

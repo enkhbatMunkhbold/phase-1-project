@@ -17,33 +17,41 @@
           <ul class="list text-center"></ul>
         </div>
         <div class="col-7 car-details">
+          <img class="detail-image" src="./images/default-car.png" alt="Insert you car details here...">
+          <div class="details">
+            <div class="row">
+              <div class="col-6">
+                <p class="your-car-model">MODEL:</p>
+                <p class="your-car-year">YEAR:</p>
+                <p class="your-car-mileage">MILEAGE:</p>
+              </div>   
+              <div class="col-6">
+                <p class="your-car-color">COLOR:</p>
+                <p class="your-car-transmission">TRANSMISSION:</p>
+                <p class="your-car-price">PRICE:</p>
+              </div>  
+            </div>                      
+          </div>         
         </div>
         <div class="col-3 sell-own-car">
           <form id="sell-car">
             <h4>SELL YOUR CAR:</h4>
             <br/>
-            <label for="sell-car-model">Model: </label><br/>
-            <input type="text" name="sell-car-model" id="sell-car-model" />
-            <br/><br/>
-            <label for="new-restaurant">Image: </label><br/>
-            <input type="text" name="restaurant" id="new-restaurant" />
-            <br/><br/>
-            <label for="new-image">Year: </label><br/>
-            <input type="text" name="image" id="new-image" />
-            <br/><br/>
-            <label for="new-rating">Mileage: </label><br/>
-            <input type="number" name="rating" id="new-rating" />
-            <br/><br/>
-            <label for="sell-car-model">Color: </label><br/>
-            <input type="text" name="sell-car-model" id="sell-car-model" />
-            <br/><br/>
-            <label for="new-restaurant">Transmission: </label><br/>
-            <input type="text" name="restaurant" id="new-restaurant" />
-            <br/><br/>
-            <label for="new-image">Price: </label><br/>
-            <input type="text" name="image" id="new-image" />
-            <br/><br/>
-            <input type="submit" id='submit-button' value="Create" />
+            <label for="model" class="form-label">Model: </label><br/>
+            <input type="text" name="model" class="form-control" /><br/>
+            <label for="image" class="form-label">Image: </label><br/>
+            <input type="text" name="image" class="form-control" /><br/>
+            <label for="year" class="form-label">Year: </label><br/>
+            <input type="text" name="year" class="form-control" /><br/>
+            <label for="mileage" class="form-label">Mileage: </label><br/>
+            <input type="number" name="mileage" class="form-control" /><br/>
+            <label for="color" class="form-label">Color: </label><br/>
+            <input type="text" name="color" class="form-control" /><br/>
+            <label for="transmission" class="form-label">Transmission: </label><br/>
+            <input type="text" name="transmission" class="form-control" /><br/>
+            <label for="price" class="form-label">Price: </label><br/>
+            <input type="text" name="price" class="form-control" /><br/>
+            <input type="submit" id='submit-button' class="btn btn-primary" value="Create" />
           </form>
         </div>
       </div>
