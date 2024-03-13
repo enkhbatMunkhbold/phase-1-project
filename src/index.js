@@ -17,10 +17,13 @@ const getAllCars = () => {
   fetch('http://localhost:3000/used_cars')
   .then(res => res.json())
   .then(data => list = data)
-  .then(cars => cars.forEach(renderEachCar))
+  .then(cars => {
+    console.log('list:', list)
+    cars.forEach(renderEachCar)
+  })
 }
 
-const renderEachCar = car => {
+function renderEachCar(car) {
   const div = document.createElement('div')
   div.className = 'card text-bg-info border-secondary mb-3 car-poster'
   div.id = car.id
@@ -30,14 +33,19 @@ const renderEachCar = car => {
       <h5 class="card-title">${car.model.toUpperCase()}</h5>
     </div>
   `
-  div.onmouseover = () => div.querySelector('div.card-body').computedStyleMap.color = 'yellow';
+  const cardBody = div.querySelector('div.card-body')
+  div.onmouseover = () => cardBody.style.background = '#387ADF';
+  div.onmouseout = () => cardBody.style.background = '';
   div.addEventListener('click', () => {
     renderCarDetails(car)
   })
 
-  div.addEventListener('dblclick', () => {
-    removeCarFromDom(car)
-    deleteCar(car)
+  div.addEventListener('keypress', e => {
+    console.log('e.target:', e.target)
+    if(e.target === 13) {
+      removeCarFromDom(car)
+      deleteCar(car)
+    }    
   })
   carsList.appendChild(div)
 }
@@ -76,8 +84,7 @@ const addSellCar = () => {
     }
     renderCarDetails(sellCar)
     addCarToBackEng(sellCar)
-  })
-}
+  })}
 
 const addCarToBackEng = car => {
   fetch('http://localhost:3000/used_cars', {
@@ -93,7 +100,6 @@ const addCarToBackEng = car => {
 }
 
 const deleteCar = car => {
-  console.log(carsList)
   fetch(`http://localhost:3000/used_cars/${car.id}`, {
     method: 'DELETE',
     headers: {
@@ -101,6 +107,5 @@ const deleteCar = car => {
       'Accept': 'application/json'
     }
   }).then(res => res.json())
-  // .then(car => console.log(car))
   .catch(error => console.log(error.message))
 }
