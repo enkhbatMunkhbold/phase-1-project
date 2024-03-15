@@ -11,5 +11,8 @@
     "url": "phase-1-project"
   },
   "author": "Enkhbat Munkhbold",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.23"
+  }
 }

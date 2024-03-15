@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   getAllCars()
+  // renderAll()
   addSellCar()
+})
+
+const renderAll = (function() {
+  let executed = false
+  return function() {
+    if(!executed) {
+      getAllCars()
+      executed = true
+      
+  }}
 })
 
 const carsList = document.querySelector('ul.list')
@@ -34,19 +45,32 @@ function renderEachCar(car) {
     </div>
   `
   const cardBody = div.querySelector('div.card-body')
-  div.onmouseover = () => cardBody.style.background = '#387ADF';
-  div.onmouseout = () => cardBody.style.background = '';
+  div.onmouseover = () => {
+    div.classList.add('activated')
+    // console.log(div.classList)
+    cardBody.style.background = '#387ADF'
+  }
+  div.onmouseout = () => {
+    div.classList.remove('activated')
+    // console.log(div.classList)
+    cardBody.style.background = ''
+  };
   div.addEventListener('click', () => {
     renderCarDetails(car)
   })
 
   div.addEventListener('keypress', e => {
     console.log('e.target:', e.target)
-    if(e.target === 13) {
+    if(e.target === 13 && div.className === 'activated') {
       removeCarFromDom(car)
       deleteCar(car)
     }    
   })
+  // div.onkeydown = ()=> {
+  //   if(div.classList.includes('activated')) {
+  //     console.log('enter key clicked')
+  //   }    
+  // }
   carsList.appendChild(div)
 }
 

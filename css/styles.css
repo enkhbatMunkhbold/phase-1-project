@@ -1,5 +1,6 @@
 body {
   padding: 1rem;
+  position: absolute;
   text-align: center;
   display: flex;
   flex-direction: column;
