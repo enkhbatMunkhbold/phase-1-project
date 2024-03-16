@@ -1,17 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   getAllCars()
-  // renderAll()
   addSellCar()
-})
-
-const renderAll = (function() {
-  let executed = false
-  return function() {
-    if(!executed) {
-      getAllCars()
-      executed = true
-      
-  }}
 })
 
 const carsList = document.querySelector('ul.list')
@@ -22,16 +11,11 @@ const sellCarMileage = document.querySelector('p.your-car-mileage')
 const sellCarColor = document.querySelector('p.your-car-color')
 const sellCarTransmission = document.querySelector('p.your-car-transmission')
 const sellCarPrice = document.querySelector('p.your-car-price')
-let list = []
 
 const getAllCars = () => {
   fetch('http://localhost:3000/used_cars')
   .then(res => res.json())
-  .then(data => list = data)
-  .then(cars => {
-    console.log('list:', list)
-    cars.forEach(renderEachCar)
-  })
+  .then(cars => cars.forEach(renderEachCar))
 }
 
 function renderEachCar(car) {
@@ -47,30 +31,25 @@ function renderEachCar(car) {
   const cardBody = div.querySelector('div.card-body')
   div.onmouseover = () => {
     div.classList.add('activated')
-    // console.log(div.classList)
     cardBody.style.background = '#387ADF'
   }
   div.onmouseout = () => {
     div.classList.remove('activated')
-    // console.log(div.classList)
     cardBody.style.background = ''
   };
   div.addEventListener('click', () => {
     renderCarDetails(car)
   })
 
-  div.addEventListener('keypress', e => {
-    console.log('e.target:', e.target)
-    if(e.target === 13 && div.className === 'activated') {
-      removeCarFromDom(car)
-      deleteCar(car)
-    }    
+  // div.addEventListener('dblclick', () => {
+  //   removeCarFromDom(car)
+  //   deleteCar(car)   
+  // })
+
+  div.addEventListener('keydown', e => {
+    console.log(e.target)
   })
-  // div.onkeydown = ()=> {
-  //   if(div.classList.includes('activated')) {
-  //     console.log('enter key clicked')
-  //   }    
-  // }
+
   carsList.appendChild(div)
 }
 
@@ -107,6 +86,7 @@ const addSellCar = () => {
       price: e.target.price.value
     }
     renderCarDetails(sellCar)
+    renderEachCar(sellCar)
     addCarToBackEng(sellCar)
   })}
 
