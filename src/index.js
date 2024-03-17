@@ -16,7 +16,7 @@ const getAllCars = () => {
   fetch('http://localhost:3000/used_cars')
   .then(res => res.json())
   .then(cars => {
-    renderCarDetails(cars[0])
+    renderCarDetails(cars[cars.length-1])
     cars.forEach(renderEachCar)
   })
 }
@@ -50,14 +50,6 @@ function renderEachCar(car) {
     removeCarFromDom(car)
     deleteCar(car)   
   })
-
-  // div.addEventListener('keydown', e => {
-  //   debugger
-  //   console.log(e.key)
-  //   // if(e.key === 'Enter'){
-  //   //   alert('Enter key pressed')
-  //   // }
-  // })
 
   carsList.appendChild(div)
 }
@@ -97,6 +89,7 @@ const addSellCar = () => {
     renderCarDetails(sellCar)
     renderEachCar(sellCar)
     addCarToBackEng(sellCar)
+    form.reset()
   })}
 
 const addCarToBackEng = car => {

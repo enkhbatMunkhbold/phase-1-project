@@ -1,26 +1,6 @@
 {
   "used_cars": [
     {
-      "id": "1",
-      "model": "CAMRY",
-      "image": "./images/camry_silver.jpeg",
-      "year": 2018,
-      "mileage": 45000,
-      "color": "Silver",
-      "transmission": "Automatic",
-      "price": 18000
-    },
-    {
-      "id": "2",
-      "model": "COROLLA",
-      "image": "./images/corolla_blue.jpeg",
-      "year": 2017,
-      "mileage": 55000,
-      "color": "Blue",
-      "transmission": "Manual",
-      "price": 16000
-    },
-    {
       "id": "3",
       "model": "RAV4",
       "image": "./images/rav4_black.jpeg",
@@ -29,16 +9,6 @@
       "color": "Black",
       "transmission": "Automatic",
       "price": 22000
-    },
-    {
-      "id": "4",
-      "model": "HIGHLANDER",
-      "image": "./images/highlander_red.jpeg",
-      "year": 2016,
-      "mileage": 60000,
-      "color": "Red",
-      "transmission": "Automatic",
-      "price": 25000
     },
     {
       "id": "5",
@@ -51,24 +21,24 @@
       "price": 15000
     },
     {
-      "id": "ca6e",
-      "model": "Matrix",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfmruhzr-BVV-EuVB1cvBzgtM2PKzEPyG8Kg&usqp=CAU",
-      "year": "2015",
-      "mileage": "45000",
+      "id": "70b9",
+      "model": "corolla",
+      "image": "./images/corolla_blue.jpeg",
+      "year": "2017",
+      "mileage": "55000",
       "color": "Blue",
       "transmission": "Manual",
-      "price": "18000"
+      "price": "16000"
     },
     {
-      "id": "0365",
-      "model": "Land Cruiser",
-      "image": "data:image/jpeg;base64,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",
-      "year": "2020",
-      "mileage": "33000",
-      "color": "Silver",
+      "id": "679e",
+      "model": "highlander",
+      "image": "./images/highlander_red.jpeg",
+      "year": "2016",
+      "mileage": "60000",
+      "color": "red",
       "transmission": "Automatic",
-      "price": "42000"
+      "price": "25000"
     }
   ]
 }
