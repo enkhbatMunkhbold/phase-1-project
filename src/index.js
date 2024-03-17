@@ -15,7 +15,10 @@ const sellCarPrice = document.querySelector('p.your-car-price')
 const getAllCars = () => {
   fetch('http://localhost:3000/used_cars')
   .then(res => res.json())
-  .then(cars => cars.forEach(renderEachCar))
+  .then(cars => {
+    renderCarDetails(cars[0])
+    cars.forEach(renderEachCar)
+  })
 }
 
 function renderEachCar(car) {
@@ -37,18 +40,24 @@ function renderEachCar(car) {
     div.classList.remove('activated')
     cardBody.style.background = ''
   };
+
   div.addEventListener('click', () => {
     renderCarDetails(car)
   })
 
-  // div.addEventListener('dblclick', () => {
-  //   removeCarFromDom(car)
-  //   deleteCar(car)   
-  // })
-
-  div.addEventListener('keydown', e => {
-    console.log(e.target)
+  div.addEventListener('dblclick', () => {
+    debugger
+    removeCarFromDom(car)
+    deleteCar(car)   
   })
+
+  // div.addEventListener('keydown', e => {
+  //   debugger
+  //   console.log(e.key)
+  //   // if(e.key === 'Enter'){
+  //   //   alert('Enter key pressed')
+  //   // }
+  // })
 
   carsList.appendChild(div)
 }
