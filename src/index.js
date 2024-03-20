@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const carsList = document.querySelector('ul.list')
+const details = document.querySelector('div.details')
 const sellCarImage = document.querySelector('img.detail-image')
 const sellCarModel = document.querySelector('p.your-car-model')
 const sellCarYear = document.querySelector('p.your-car-year')
@@ -36,22 +37,29 @@ function renderEachCar(car) {
     div.classList.add('activated')
     cardBody.style.background = '#387ADF'
   }
+
   div.onmouseout = () => {
     div.classList.remove('activated')
     cardBody.style.background = ''
   };
 
-  div.addEventListener('click', () => {
+  carDetials(car, div)
+  deleteCar(car, div)
+  carsList.appendChild(div)
+}
+
+const carDetials = (car, el) => {
+  el.addEventListener('click', () => {
     renderCarDetails(car)
   })
+}
 
-  div.addEventListener('dblclick', () => {
-    debugger
+const deleteCar = (car, el) => {
+  el.addEventListener('dblclick', () => {
     removeCarFromDom(car)
-    deleteCar(car)   
+    deleteCarFromBackEnd(car)   
   })
 
-  carsList.appendChild(div)
 }
 
 const removeCarFromDom = car => {
@@ -65,12 +73,16 @@ const removeCarFromDom = car => {
 
 const renderCarDetails = car => {
   sellCarImage.src = car.image
-  sellCarModel.textContent = `MODEL:   ${car.model}`
+  sellCarModel.textContent = `MODEL:   ${captilaze(car.model)}`
   sellCarYear.textContent = `YEAR:   ${car.year}`
   sellCarMileage.textContent = `MILEAGE:   ${car.mileage}`
-  sellCarColor.textContent = `COLOR:   ${car.color}`
-  sellCarTransmission.textContent = `TRANSMISSION:   ${car.transmission}`
+  sellCarColor.textContent = `COLOR:   ${captilaze(car.color)}`
+  sellCarTransmission.textContent = `TRANSMISSION:   ${captilaze(car.transmission)}`
   sellCarPrice.textContent = `PRICE:   $${car.price}`
+}
+
+const captilaze = word => {
+  return word[0].toUpperCase() + word.slice(1).toLowerCase()
 }
 
 const addSellCar = () => {
@@ -92,6 +104,23 @@ const addSellCar = () => {
     form.reset()
   })}
 
+  // const editCar = car => {
+  //   details.addEventListener('dblclick', e => {
+  //     e.target.classList.add('editing')
+  //     const textContent = e.target.textContent
+  //     const textValue = textContent.split(' ')[3]
+  //     console.log(e.target.className)
+      
+  //   })
+  // }
+
+  // const turnInput = (event, text) => {
+  //   const arrOfNames = event.target.className.split(' ')
+  //   let isEditing = arrOfNames.includes('editing')
+  //   isEditing ? `<input type="text">${text}</input>` : 
+  //   `<p class="your-car-${arrOfNames[0]}" name="${arrOfNames[0]}">`
+  // }
+
 const addCarToBackEng = car => {
   fetch('http://localhost:3000/used_cars', {
     method: 'POST',
@@ -105,7 +134,7 @@ const addCarToBackEng = car => {
   .catch(error => console.log(error.message))
 }
 
-const deleteCar = car => {
+const deleteCarFromBackEnd = car => {
   fetch(`http://localhost:3000/used_cars/${car.id}`, {
     method: 'DELETE',
     headers: {

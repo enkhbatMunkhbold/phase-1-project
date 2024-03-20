@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: blue;
-  max-height: 50rem;
+  max-height: 55rem;
 }
 
 ul {
@@ -64,9 +64,13 @@ label {
   color: white;
 }
 
-.car-details, .car-list{
+.car-details, .car-list {
   border: 1px solid white;
   padding: 0 5px;
+}
+
+.car-details {
+  padding-top: 20px;
 }
 
 .list {
@@ -81,7 +85,13 @@ label {
   width: 90%;
 }
 
+.specifications {
+  padding-top: 40px;
+}
+
 .details {
+  border: 1px solid white;
+  padding-top: 20px;
   text-align: left;
   margin: 2rem;
   padding-left: 5rem;
