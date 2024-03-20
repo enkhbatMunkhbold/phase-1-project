@@ -39,12 +39,10 @@ function renderEachCar(car) {
   `
   const cardBody = div.querySelector('div.card-body')
   div.onmouseover = () => {
-    // div.classList.add('activated')
     cardBody.style.background = '#387ADF'
   }
 
   div.onmouseout = () => {
-    // div.classList.remove('activated')
     cardBody.style.background = ''
   };
 
@@ -82,20 +80,6 @@ const removeCarFromDom = car => {
       }      
     } 
   }
-  console.log('domList:', domList)
-  console.log('list:', list)
-  // for(let i = 0; i < list.length; i++) {
-  //   if(list[i].id === car.id) {
-  //     list.splice(i, 1)
-  //     if(i > 0) {
-  //       renderCarDetails(list[i - 1])
-  //     } else if(list.length > 0 && i === 0) {
-  //       renderCarDetails(list[i + 1])
-  //     } else {
-  //       defaultCarDetails()
-  //     }      
-  //   }
-  // }  
 }
 
 const defaultCarDetails = () => {
@@ -141,23 +125,6 @@ const addSellCar = () => {
     addCarToBackEng(sellCar)
     form.reset()
   })}
-
-  // const editCar = car => {
-  //   details.addEventListener('dblclick', e => {
-  //     e.target.classList.add('editing')
-  //     const textContent = e.target.textContent
-  //     const textValue = textContent.split(' ')[3]
-  //     console.log(e.target.className)
-      
-  //   })
-  // }
-
-  // const turnInput = (event, text) => {
-  //   const arrOfNames = event.target.className.split(' ')
-  //   let isEditing = arrOfNames.includes('editing')
-  //   isEditing ? `<input type="text">${text}</input>` : 
-  //   `<p class="your-car-${arrOfNames[0]}" name="${arrOfNames[0]}">`
-  // }
 
 const addCarToBackEng = car => {
   fetch('http://localhost:3000/used_cars', {
