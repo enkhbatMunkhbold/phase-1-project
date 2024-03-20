@@ -16,9 +16,14 @@ const sellCarPrice = document.querySelector('p.your-car-price')
 const getAllCars = () => {
   fetch('http://localhost:3000/used_cars')
   .then(res => res.json())
+  .then(data => list = data)
   .then(cars => {
-    renderCarDetails(cars[cars.length-1])
-    cars.forEach(renderEachCar)
+    if(cars.length > 0) {
+      renderCarDetails(cars[cars.length-1])
+      cars.forEach(renderEachCar)
+    } else {
+      defaultCarDetails()
+    }    
   })
 }
 
@@ -34,12 +39,12 @@ function renderEachCar(car) {
   `
   const cardBody = div.querySelector('div.card-body')
   div.onmouseover = () => {
-    div.classList.add('activated')
+    // div.classList.add('activated')
     cardBody.style.background = '#387ADF'
   }
 
   div.onmouseout = () => {
-    div.classList.remove('activated')
+    // div.classList.remove('activated')
     cardBody.style.background = ''
   };
 
@@ -59,16 +64,48 @@ const deleteCar = (car, el) => {
     removeCarFromDom(car)
     deleteCarFromBackEnd(car)   
   })
-
 }
 
 const removeCarFromDom = car => {
-  const list = carsList.children
+  debugger
+  const domList = carsList.children  
   for(let i = 0; i < list.length; i++) {
     if(list[i].id === car.id) {
-      list[i].remove()
-    }
+      domList[i].remove()
+      list.splice(i, 1)
+      if(i > 0) {
+        renderCarDetails(list[i - 1])
+      } else if(list.length > 0 && i === 0) {
+        renderCarDetails(list[i + 1])
+      } else {
+        defaultCarDetails()
+      }      
+    } 
   }
+  console.log('domList:', domList)
+  console.log('list:', list)
+  // for(let i = 0; i < list.length; i++) {
+  //   if(list[i].id === car.id) {
+  //     list.splice(i, 1)
+  //     if(i > 0) {
+  //       renderCarDetails(list[i - 1])
+  //     } else if(list.length > 0 && i === 0) {
+  //       renderCarDetails(list[i + 1])
+  //     } else {
+  //       defaultCarDetails()
+  //     }      
+  //   }
+  // }  
+}
+
+const defaultCarDetails = () => {
+  sellCarImage.src = "images/default-car.png"
+  sellCarModel.textContent = 'MODEL:'
+  sellCarYear.textContent = 'YEAR:'
+  sellCarMileage.textContent ='MILEAGE:'
+  sellCarColor.textContent = 'COLOR:'
+  sellCarTransmission.textContent = 'TRANSMISSION:'
+  sellCarPrice.textContent = 'PRICE:'
 }
 
 const renderCarDetails = car => {
@@ -98,6 +135,7 @@ const addSellCar = () => {
       transmission: e.target.transmission.value,
       price: e.target.price.value
     }
+    list.push(sellCar)
     renderCarDetails(sellCar)
     renderEachCar(sellCar)
     addCarToBackEng(sellCar)
