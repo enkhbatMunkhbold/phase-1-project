@@ -1,9 +1,9 @@
-# phase-1-project
+# Phase-1-Project
 
 **Toyota Dealership** app is a company app, where the company publishes its used cars' list. The company can add or delete cars into or from the list. Users can select a specific car and see the details of that car.
 
 
-# Goal
+## Goal
 
 This app is built to demonstrate the skills I have gotten from the Phase-1 in the Flatiron School, using CSS, HTML, and JS files, which work together to complete and achieve the goal of the app.
 
