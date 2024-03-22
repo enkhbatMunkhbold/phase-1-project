@@ -10,7 +10,7 @@ This app is built to demonstrate the skills I have gotten from the Phase-1 in th
 
 ## Work Environment
 
-The app works locally, using url address 'http://localhost:3000,' which means it is hosted in node server and on port 3000.
+The app works locally, using url address 'http://localhost:3000/cars,' which means it is hosted in node server and on port 3000.
 
 
 ## Search List
