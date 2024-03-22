@@ -32,4 +32,4 @@ One can add a car to the list. To do this, he/she needs insert all info about th
 
 Here is an example of how the app works.
 
-![Toyota Dealership](./demo.mp4)
+![Toyota Dealership](./demo.gif)
